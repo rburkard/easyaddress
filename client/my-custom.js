@@ -14,5 +14,5 @@ function storedata() {
 
   console.log("test5:", options.body);
 
-  fetch("http://localhost:3000/api/add", options);
+  fetch("/api/add", options);
 }
