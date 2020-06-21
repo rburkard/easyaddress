@@ -3,7 +3,7 @@
   "name": "startbootstrap-landing-page",
   "version": "5.0.7",
   "scripts": {
-    "start": "nodemon --watch client --watch src src/server.js"
+    "start": "nodemon --watch client --watch index.js"
   },
   "license": "",
   "dependencies": {
