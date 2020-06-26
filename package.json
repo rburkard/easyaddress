@@ -8,8 +8,7 @@
   },
   "scripts": {
     "start": "nodemon --watch client --watch server.js",
-    "build": "webpack",
-    "postinstall": "ng build"
+    "build": "webpack"
   },
   "license": "",
   "dependencies": {
