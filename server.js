@@ -23,7 +23,7 @@ server.use(compression());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
-server.use(express.static(__dirname + "/../client"));
+server.use(express.static(__dirname));
 
 const router = express.Router();
 
