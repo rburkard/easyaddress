@@ -23,19 +23,18 @@ server.use(compression());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
-server.use(express.static(__dirname));
+server.use(express.static(__dirname + "/client"));
 
 const router = express.Router();
 
-const database = new Datastore('database_easyaddress.db');
-  database.loadDatabase();
+const database = new Datastore("database_easyaddress.db");
+database.loadDatabase();
 
 router.post("/add", (request, response) => {
-  
-database.insert(request.body)
+  database.insert(request.body);
 
-console.log("I got a request: ", request.body);
-return response.send({ test: "Email received" });
+  console.log("I got a request: ", request.body);
+  return response.send({ test: "Email received" });
 });
 
 // go to http://localhost:3000/api/test
@@ -46,4 +45,6 @@ router.get("/test", (request, response) => {
 
 server.use("/api", router);
 
-server.listen(process.env.PORT || 3000, () => console.log("Listening on port heroku"));
+server.listen(process.env.PORT || 3000, () =>
+  console.log("Listening on port: ", process.env.PORT || 3000),
+);
